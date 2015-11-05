@@ -1,0 +1,31 @@
+data:
+    image: debian:jessie
+    volumes:
+        - /var/lib/mysql
+web:
+    build: ./web
+    volumes:
+        - ./web/public:/var/www/html
+        - ./web/craft:/var/www/craft
+    links:
+        - db
+    ports:
+        - "80:80"
+assets:
+    build: ./assets
+    ports:
+        - "35729:35729"
+    volumes:
+        - ./assets/gulpfile.js:/assets/gulpfile.js:ro
+        - ./web/public/static/styles:/assets/styles:ro
+        - ./web/public/static/scripts:/assets/scripts:ro
+        - ./web/public/static/build:/assets/build
+db:
+    image: mysql:5.5
+    volumes_from:
+        - data
+    environment:
+        MYSQL_ROOT_PASSWORD: docker-root
+        MYSQL_PASSWORD: docker
+        MYSQL_USER: docker
+        MYSQL_DATABASE: craftcms
