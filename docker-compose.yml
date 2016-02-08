@@ -25,7 +25,6 @@ db:
     volumes_from:
         - data
     environment:
-        MYSQL_ROOT_PASSWORD: docker-root
         MYSQL_PASSWORD: docker
         MYSQL_USER: docker
         MYSQL_DATABASE: craftcms
