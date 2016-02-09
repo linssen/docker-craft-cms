@@ -7,8 +7,9 @@
 1. Run `docker-compose up`
 1. Navigate to the docker machine's ip (generally http://192.168.99.100/)
 1. Set your DB credentials to the following:
-
+```
     'server' => 'db',
     'database' => 'craftcms',
     'user' => 'docker',
     'password' => 'docker',
+```
