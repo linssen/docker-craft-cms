@@ -22,5 +22,6 @@ services:
         image: mysql:5.5
         environment:
             MYSQL_PASSWORD: docker
+            MYSQL_ROOT_PASSWORD: docker
             MYSQL_USER: docker
             MYSQL_DATABASE: craftcms
