@@ -1,5 +1,8 @@
 # Craft CMS with Docker compose
 
+## Prerequisites
+1. `docker-compose` > v1.6
+
 ## Installation
 
 1. Unzip the CraftCMS download into `web`, overwriting the `craft` and `public` folders therein.
